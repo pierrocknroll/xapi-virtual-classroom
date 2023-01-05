@@ -4,22 +4,22 @@ This documentation intends to describe virtual classroom profile defined by the 
 
 ## Virtual classroom profile
 
-- [Initalized](./profiles/virtual-classroom/created-poll.md)
-- [Terminated](./profiles/virtual-classroom/terminated.md)
-- [Joined](./profiles/virtual-classroom/joined.md)
-- [Left](./profiles/virtual-classroom/left.md)
-- [Muted](./profiles/virtual-classroom/muted.md)
-- [Unmuted](./profiles/virtual-classroom/unmuted.md)
-- [Started camera](./profiles/virtual-classroom/started-camera.md)
-- [Stopped camera](./profiles/virtual-classroom/stopped-camera.md)
-- [Shared screen](./profiles/virtual-classroom/shared-screen.md)
-- [Unshared screen](./profiles/virtual-classroom/unshared-screen.md)
-- [Raised hand](./profiles/virtual-classroom/raised-hand.md)
-- [Lowered hand](./profiles/virtual-classroom/lowered-hand.md)
-- [Created poll](./profiles/virtual-classroom/created-poll.md)
-- [Answered poll](./profiles/virtual-classroom/answered-poll.md)
-- [Posted public message](./profiles/virtual-classroom/posted-public-message.md)
-- [Posted private message](./profiles/virtual-classroom/posted-public-message.md)
+- [Initalized](./examples/created-poll.md)
+- [Terminated](./examples/terminated.md)
+- [Joined](./examples/joined.md)
+- [Left](./examples/left.md)
+- [Muted](./examples/muted.md)
+- [Unmuted](./examples/unmuted.md)
+- [Started camera](./examples/started-camera.md)
+- [Stopped camera](./examples/stopped-camera.md)
+- [Shared screen](./examples/shared-screen.md)
+- [Unshared screen](./examples/unshared-screen.md)
+- [Raised hand](./examples/raised-hand.md)
+- [Lowered hand](./examples/lowered-hand.md)
+- [Created poll](./examples/created-poll.md)
+- [Answered poll](./examples/answered-poll.md)
+- [Posted public message](./examples/posted-public-message.md)
+- [Posted private message](./examples/posted-public-message.md)
 
 ## Contributors
 
