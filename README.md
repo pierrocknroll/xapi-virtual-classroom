@@ -4,7 +4,7 @@ This documentation intends to describe virtual classroom profile defined by the 
 
 ## Virtual classroom profile
 
-- [Initalized](./examples/created-poll.md)
+- [Initalized](./examples/initialized.md)
 - [Terminated](./examples/terminated.md)
 - [Joined](./examples/joined.md)
 - [Left](./examples/left.md)
@@ -19,7 +19,7 @@ This documentation intends to describe virtual classroom profile defined by the 
 - [Created poll](./examples/created-poll.md)
 - [Answered poll](./examples/answered-poll.md)
 - [Posted public message](./examples/posted-public-message.md)
-- [Posted private message](./examples/posted-public-message.md)
+- [Posted private message](./examples/posted-private-message.md)
 
 ## Contributors
 
