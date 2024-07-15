@@ -44,10 +44,10 @@ A user has been unmuted. The action has been done by the participant itself or b
                   "type": "https://w3id.org/xapi/virtual-classroom/activity-types/virtual-classroom",
                   "name": {
                      "en": "xAPI 101"
-                  },
-               },
-            },
-         ],
+                  }
+               }
+            }
+         ]
       },
       "extensions": {
          "https://w3id.org/xapi/cmi5/context/extensions/sessionid": "c7b6f0a9-482c-4c03-acc1-548289126963"
