@@ -68,6 +68,3 @@ A participant has posted a public message in the virtual classroom chat.
 - `$.context.contextActivities.category`: INCLUDED, MUST contain an activity with the `https://w3id.org/xapi/virtual-classroom` id.
 - `$.context.extensions.["https://w3id.org/xapi/cmi5/context/extensions/sessionid"]`: INCLUDED, UUID format, MUST be the same for all the statements from `initialized` to `terminated` (i.e. technical session).
 - `$.timestamp`: INCLUDED.
-
-
-

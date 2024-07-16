@@ -1,0 +1,596 @@
+{
+    "id": "https://w3id.org/xapi/virtual-classroom",
+    "@context": "https://w3id.org/xapi/profiles/context",
+    "type": "Profile",
+    "conformsTo": "https://w3id.org/xapi/profiles#1.0",
+    "prefLabel": {
+        "en": "DASES Virtual Classroom Profile"
+    },
+    "definition": {
+        "en": "Profile of activities occurring in a virtual classroom."
+    },
+    "concepts": [
+    ],
+    "templates": [
+        {
+            "id": "http://schema.dases.eu/xapi/profile/common/templates/initialized",
+            "type": "StatementTemplate",
+            "prefLabel": {
+                "en": "Initialized"
+            },
+            "definition": {
+                "en": "A virtual classroom session has started."
+            },
+            "verb": "http://adlnet.gov/expapi/verbs/initialized",
+            "objectActivityType": "https://w3id.org/xapi/virtual-classroom/activity-types/virtual-classroom",
+            "rules": [
+                {
+                    "location": "$.context.registration",
+                    "presence": "included"
+                },
+                {
+                    "location": "$.context.contextActivities.category.id",
+                    "presence": "included",
+                    "any": [
+                        "https://w3id.org/xapi/virtual-classroom"
+                    ]
+                },
+                {
+                    "location": "$.context.extensions['https://w3id.org/xapi/cmi5/context/extensions/sessionid']",
+                    "presence": "included"
+                },
+                {
+                    "location": "$.timestamp",
+                    "presence": "included"
+                },
+                {
+                    "location": "$.context.extensions['http://id.tincanapi.com/extension/planned-duration']",
+                    "presence": "recommended"
+                }
+            ]
+        },
+        {
+            "id": "http://schema.dases.eu/xapi/profile/common/templates/joined",
+            "type": "StatementTemplate",
+            "prefLabel": {
+                "en": "Joined"
+            },
+            "definition": {
+                "en": "A participant has joined the virtual classroom session."
+            },
+            "verb": "http://activitystrea.ms/join",
+            "objectActivityType": "https://w3id.org/xapi/virtual-classroom/activity-types/virtual-classroom",
+            "rules": [
+                {
+                    "location": "$.context.registration",
+                    "presence": "included"
+                },
+                {
+                    "location": "$.context.contextActivities.category.id",
+                    "presence": "included",
+                    "any": [
+                        "https://w3id.org/xapi/virtual-classroom"
+                    ]
+                },
+                {
+                    "location": "$.context.extensions['https://w3id.org/xapi/cmi5/context/extensions/sessionid']",
+                    "presence": "included"
+                },
+                {
+                    "location": "$.timestamp",
+                    "presence": "included"
+                },
+                {
+                    "location": "$.context.extensions['https://w3id.org/xapi/virtual-classroom/extensions/camera-activated']",
+                    "presence": "recommended"
+                },
+                {
+                    "location": "$.context.extensions['https://w3id.org/xapi/virtual-classroom/extensions/micro-activated']",
+                    "presence": "recommended"
+                }
+            ]
+        },
+        {
+            "id": "http://schema.dases.eu/xapi/profile/common/templates/left",
+            "type": "StatementTemplate",
+            "prefLabel": {
+                "en": "Left"
+            },
+            "definition": {
+                "en": "A participant has left the virtual classroom session."
+            },
+            "verb": "http://activitystrea.ms/leave",
+            "objectActivityType": "https://w3id.org/xapi/virtual-classroom/activity-types/virtual-classroom",
+            "rules": [
+                {
+                    "location": "$.context.registration",
+                    "presence": "included"
+                },
+                {
+                    "location": "$.context.contextActivities.category.id",
+                    "presence": "included",
+                    "any": [
+                        "https://w3id.org/xapi/virtual-classroom"
+                    ]
+                },
+                {
+                    "location": "$.context.extensions['https://w3id.org/xapi/cmi5/context/extensions/sessionid']",
+                    "presence": "included"
+                },
+                {
+                    "location": "$.timestamp",
+                    "presence": "included"
+                }
+            ]
+        },
+        {
+            "id": "http://schema.dases.eu/xapi/profile/common/templates/terminated",
+            "type": "StatementTemplate",
+            "prefLabel": {
+                "en": "Terminated"
+            },
+            "definition": {
+                "en": "A virtual classroom session has terminated."
+            },
+            "verb": "http://adlnet.gov/expapi/verbs/terminated",
+            "objectActivityType": "https://w3id.org/xapi/virtual-classroom/activity-types/virtual-classroom",
+            "rules": [
+                {
+                    "location": "$.context.registration",
+                    "presence": "included"
+                },
+                {
+                    "location": "$.context.contextActivities.category.id",
+                    "presence": "included",
+                    "any": [
+                        "https://w3id.org/xapi/virtual-classroom"
+                    ]
+                },
+                {
+                    "location": "$.context.extensions['https://w3id.org/xapi/cmi5/context/extensions/sessionid']",
+                    "presence": "included"
+                },
+                {
+                    "location": "$.timestamp",
+                    "presence": "included"
+                },
+                {
+                    "location": "$.context.extensions['http://id.tincanapi.com/extension/planned-duration']",
+                    "presence": "recommended"
+                },
+                {
+                    "location": "$.result.duration",
+                    "presence": "included"
+                }
+            ]
+        },
+        {
+            "id": "http://schema.dases.eu/xapi/profile/common/templates/started-poll",
+            "type": "StatementTemplate",
+            "prefLabel": {
+                "en": "Started poll"
+            },
+            "definition": {
+                "en": "A poll has been started."
+            },
+            "verb": "http://adlnet.gov/expapi/verbs/asked",
+            "objectActivityType": "http://adlnet.gov/expapi/activities/cmi.interaction",
+            "rules": [
+                {
+                    "location": "$.context.registration",
+                    "presence": "included"
+                },
+                {
+                    "location": "$.context.contextActivities.category.id",
+                    "presence": "included",
+                    "any": [
+                        "https://w3id.org/xapi/virtual-classroom"
+                    ]
+                },
+                {
+                    "location": "$.context.extensions['https://w3id.org/xapi/cmi5/context/extensions/sessionid']",
+                    "presence": "included"
+                },
+                {
+                    "location": "$.timestamp",
+                    "presence": "included"
+                },
+                {
+                    "location": "$.context.contextActivities.parent.id",
+                    "presence": "included"
+                },
+                {
+                    "location": "$.object.definition",
+                    "presence": "included"
+                }
+            ]
+        },
+        {
+            "id": "http://schema.dases.eu/xapi/profile/common/templates/answered-poll",
+            "type": "StatementTemplate",
+            "prefLabel": {
+                "en": "Answered poll question"
+            },
+            "definition": {
+                "en": "A participant answered a poll question."
+            },
+            "verb": "http://adlnet.gov/expapi/verbs/answered",
+            "objectActivityType": "http://adlnet.gov/expapi/activities/cmi.interaction",
+            "rules": [
+                {
+                    "location": "$.context.registration",
+                    "presence": "included"
+                },
+                {
+                    "location": "$.context.contextActivities.category.id",
+                    "presence": "included",
+                    "any": [
+                        "https://w3id.org/xapi/virtual-classroom"
+                    ]
+                },
+                {
+                    "location": "$.context.extensions['https://w3id.org/xapi/cmi5/context/extensions/sessionid']",
+                    "presence": "included"
+                },
+                {
+                    "location": "$.timestamp",
+                    "presence": "included"
+                },
+                {
+                    "location": "$.context.contextActivities.parent.id",
+                    "presence": "included"
+                },
+                {
+                    "location": "$.object.definition",
+                    "presence": "included",
+                    "any": [
+                        "http://adlnet.gov/expapi/activities/cmi.interaction"
+                    ]
+                },
+                {
+                    "location": "$.result.response",
+                    "presence": "included"
+                }
+            ]
+        },
+        {
+            "id": "http://schema.dases.eu/xapi/profile/common/templates/raised-hand",
+            "type": "StatementTemplate",
+            "prefLabel": {
+                "en": "Raised hand"
+            },
+            "definition": {
+                "en": "A user has raised the hand to take part in the discussion."
+            },
+            "verb": "https://w3id.org/xapi/virtual-classroom/verbs/reacted",
+            "objectActivityType": "https://w3id.org/xapi/virtual-classroom/activity-types/virtual-classroom",
+            "rules": [
+                {
+                    "location": "$.context.registration",
+                    "presence": "included"
+                },
+                {
+                    "location": "$.context.contextActivities.category.id",
+                    "presence": "included",
+                    "any": [
+                        "https://w3id.org/xapi/virtual-classroom"
+                    ]
+                },
+                {
+                    "location": "$.context.extensions['https://w3id.org/xapi/cmi5/context/extensions/sessionid']",
+                    "presence": "included"
+                },
+                {
+                    "location": "$.timestamp",
+                    "presence": "included"
+                },
+                {
+                    "location": "$.result.extensions['https://w3id.org/xapi/virtual-classroom/extensions/emoji']",
+                    "presence": "included",
+                    "any": [
+                        "U+1F590"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "http://schema.dases.eu/xapi/profile/common/templates/lowered-hand",
+            "type": "StatementTemplate",
+            "prefLabel": {
+                "en": "Lowered hand"
+            },
+            "definition": {
+                "en": "A user has lowered the hand to stop asking for speaking/taking part in the discussion."
+            },
+            "verb": "https://w3id.org/xapi/virtual-classroom/verbs/unreacted",
+            "objectActivityType": "https://w3id.org/xapi/virtual-classroom/activity-types/virtual-classroom",
+            "rules": [
+                {
+                    "location": "$.context.registration",
+                    "presence": "included"
+                },
+                {
+                    "location": "$.context.contextActivities.category.id",
+                    "presence": "included",
+                    "any": [
+                        "https://w3id.org/xapi/virtual-classroom"
+                    ]
+                },
+                {
+                    "location": "$.context.extensions['https://w3id.org/xapi/cmi5/context/extensions/sessionid']",
+                    "presence": "included"
+                },
+                {
+                    "location": "$.timestamp",
+                    "presence": "included"
+                },
+                {
+                    "location": "$.result.extensions['https://w3id.org/xapi/virtual-classroom/extensions/emoji']",
+                    "presence": "included",
+                    "any": [
+                        "U+1F590"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "http://schema.dases.eu/xapi/profile/common/templates/muted",
+            "type": "StatementTemplate",
+            "prefLabel": {
+                "en": "Muted"
+            },
+            "definition": {
+                "en": "A participant has been muted."
+            },
+            "verb": "https://w3id.org/xapi/virtual-classroom/verbs/stopped",
+            "objectActivityType": "https://w3id.org/xapi/virtual-classroom/activity-types/micro",
+            "rules": [
+                {
+                    "location": "$.context.registration",
+                    "presence": "included"
+                },
+                {
+                    "location": "$.context.contextActivities.category.id",
+                    "presence": "included",
+                    "any": [
+                        "https://w3id.org/xapi/virtual-classroom"
+                    ]
+                },
+                {
+                    "location": "$.context.extensions['https://w3id.org/xapi/cmi5/context/extensions/sessionid']",
+                    "presence": "included"
+                },
+                {
+                    "location": "$.timestamp",
+                    "presence": "included"
+                },
+                {
+                    "location": "$.context.contextActivities.parent.id",
+                    "presence": "included"
+                }
+            ]
+        },
+        {
+            "id": "http://schema.dases.eu/xapi/profile/common/templates/unmuted",
+            "type": "StatementTemplate",
+            "prefLabel": {
+                "en": "Unmuted"
+            },
+            "definition": {
+                "en": "A participant has been unmuted."
+            },
+            "verb": "http://activitystrea.ms/start",
+            "objectActivityType": "https://w3id.org/xapi/virtual-classroom/activity-types/micro",
+            "rules": [
+                {
+                    "location": "$.context.registration",
+                    "presence": "included"
+                },
+                {
+                    "location": "$.context.contextActivities.category.id",
+                    "presence": "included",
+                    "any": [
+                        "https://w3id.org/xapi/virtual-classroom"
+                    ]
+                },
+                {
+                    "location": "$.context.extensions['https://w3id.org/xapi/cmi5/context/extensions/sessionid']",
+                    "presence": "included"
+                },
+                {
+                    "location": "$.timestamp",
+                    "presence": "included"
+                },
+                {
+                    "location": "$.context.contextActivities.parent.id",
+                    "presence": "included"
+                }
+            ]
+        },
+        {
+            "id": "http://schema.dases.eu/xapi/profile/common/templates/posted-public-message",
+            "type": "StatementTemplate",
+            "prefLabel": {
+                "en": "Posted public message"
+            },
+            "definition": {
+                "en": "A participant has posted a public message in the chat."
+            },
+            "verb": "https://w3id.org/xapi/acrossx/verbs/posted",
+            "objectActivityType": "https://w3id.org/xapi/acrossx/activities/message",
+            "rules": [
+                {
+                    "location": "$.context.registration",
+                    "presence": "included"
+                },
+                {
+                    "location": "$.context.contextActivities.category.id",
+                    "presence": "included",
+                    "any": [
+                        "https://w3id.org/xapi/virtual-classroom"
+                    ]
+                },
+                {
+                    "location": "$.context.extensions['https://w3id.org/xapi/cmi5/context/extensions/sessionid']",
+                    "presence": "included"
+                },
+                {
+                    "location": "$.timestamp",
+                    "presence": "included"
+                },
+                {
+                    "location": "$.context.contextActivities.parent.id",
+                    "presence": "included"
+                }
+            ]
+        },
+        {
+            "id": "http://schema.dases.eu/xapi/profile/common/templates/shared-screen",
+            "type": "StatementTemplate",
+            "prefLabel": {
+                "en": "Shared screen"
+            },
+            "definition": {
+                "en": "A participant shared the screen."
+            },
+            "verb": "http://activitystrea.ms/share",
+            "objectActivityType": "https://w3id.org/xapi/virtual-classroom/activity-types/screen",
+            "rules": [
+                {
+                    "location": "$.context.registration",
+                    "presence": "included"
+                },
+                {
+                    "location": "$.context.contextActivities.category.id",
+                    "presence": "included",
+                    "any": [
+                        "https://w3id.org/xapi/virtual-classroom"
+                    ]
+                },
+                {
+                    "location": "$.context.extensions['https://w3id.org/xapi/cmi5/context/extensions/sessionid']",
+                    "presence": "included"
+                },
+                {
+                    "location": "$.timestamp",
+                    "presence": "included"
+                },
+                {
+                    "location": "$.context.contextActivities.parent.id",
+                    "presence": "included"
+                }
+            ]
+        },
+        {
+            "id": "http://schema.dases.eu/xapi/profile/common/templates/unshared-screen",
+            "type": "StatementTemplate",
+            "prefLabel": {
+                "en": "Unshared screen"
+            },
+            "definition": {
+                "en": "A participant unshared the screen."
+            },
+            "verb": "http://activitystrea.ms/unshare",
+            "objectActivityType": "https://w3id.org/xapi/virtual-classroom/activity-types/screen",
+            "rules": [
+                {
+                    "location": "$.context.registration",
+                    "presence": "included"
+                },
+                {
+                    "location": "$.context.contextActivities.category.id",
+                    "presence": "included",
+                    "any": [
+                        "https://w3id.org/xapi/virtual-classroom"
+                    ]
+                },
+                {
+                    "location": "$.context.extensions['https://w3id.org/xapi/cmi5/context/extensions/sessionid']",
+                    "presence": "included"
+                },
+                {
+                    "location": "$.timestamp",
+                    "presence": "included"
+                },
+                {
+                    "location": "$.context.contextActivities.parent.id",
+                    "presence": "included"
+                }
+            ]
+        },
+        {
+            "id": "http://schema.dases.eu/xapi/profile/common/templates/started-camera",
+            "type": "StatementTemplate",
+            "prefLabel": {
+                "en": "Started camera"
+            },
+            "definition": {
+                "en": "A participant started the camera."
+            },
+            "verb": "http://activitystrea.ms/start",
+            "objectActivityType": "https://w3id.org/xapi/virtual-classroom/activity-types/camera",
+            "rules": [
+                {
+                    "location": "$.context.registration",
+                    "presence": "included"
+                },
+                {
+                    "location": "$.context.contextActivities.category.id",
+                    "presence": "included",
+                    "any": [
+                        "https://w3id.org/xapi/virtual-classroom"
+                    ]
+                },
+                {
+                    "location": "$.context.extensions['https://w3id.org/xapi/cmi5/context/extensions/sessionid']",
+                    "presence": "included"
+                },
+                {
+                    "location": "$.timestamp",
+                    "presence": "included"
+                },
+                {
+                    "location": "$.context.contextActivities.parent.id",
+                    "presence": "included"
+                }
+            ]
+        },
+        {
+            "id": "http://schema.dases.eu/xapi/profile/common/templates/stopped-camera",
+            "type": "StatementTemplate",
+            "prefLabel": {
+                "en": "Stopped camera"
+            },
+            "definition": {
+                "en": "A participant stopped the camera."
+            },
+            "verb": "https://w3id.org/xapi/virtual-classroom/verbs/stopped",
+            "objectActivityType": "https://w3id.org/xapi/virtual-classroom/activity-types/camera",
+            "rules": [
+                {
+                    "location": "$.context.registration",
+                    "presence": "included"
+                },
+                {
+                    "location": "$.context.contextActivities.category.id",
+                    "presence": "included",
+                    "any": [
+                        "https://w3id.org/xapi/virtual-classroom"
+                    ]
+                },
+                {
+                    "location": "$.context.extensions['https://w3id.org/xapi/cmi5/context/extensions/sessionid']",
+                    "presence": "included"
+                },
+                {
+                    "location": "$.timestamp",
+                    "presence": "included"
+                },
+                {
+                    "location": "$.context.contextActivities.parent.id",
+                    "presence": "included"
+                }
+            ]
+        }
+    ]
+}

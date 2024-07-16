@@ -71,6 +71,3 @@ A participant shared the screen on a given virtual classroom session.
 - `$.context.contextActivities.parent`: INCLUDED, MUST be the virtual classroom activity.
 - `$.context.extensions.["https://w3id.org/xapi/cmi5/context/extensions/sessionid"]`: INCLUDED, UUID format, MUST be the same for all the statements from `initialized` to `terminated` (i.e. technical session).
 - `$.timestamp`: INCLUDED.
-
-
-
